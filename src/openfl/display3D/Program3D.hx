@@ -594,13 +594,15 @@ import lime.utils.BytePointer;
 
 		if (__glVertexShader != null)
 		{
-			gl.deleteShader(__glVertexShader);
+			if (gl != null)
+				gl.deleteShader(__glVertexShader);
 			__glVertexShader = null;
 		}
 
 		if (__glFragmentShader != null)
 		{
-			gl.deleteShader(__glFragmentShader);
+			if (gl != null)
+				gl.deleteShader(__glFragmentShader);
 			__glFragmentShader = null;
 		}
 	}
